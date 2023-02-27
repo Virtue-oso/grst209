@@ -4,7 +4,7 @@ import os
 with open(os.path.join(os.getcwd(), "8.pdf"), "rb") as pdf_file:
 
 # Open the PDF file in read-binary mode
-# pdf_file = open('E:/tranb/Desktop/grst_209/8.pdf', 'rb')
+
 
 # Create a PDF reader object
     pdf_reader = PyPDF2.PdfReader(pdf_file)
