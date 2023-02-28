@@ -1,7 +1,11 @@
 import PyPDF2
 import re
 import os
-with open(os.path.join(os.getcwd(), "8.pdf"), "rb") as pdf_file:
+import random
+
+quotes = []
+
+with open(os.path.join(os.getcwd(), "Midterm Things.pdf"), "rb") as pdf_file:
 
 # Open the PDF file in read-binary mode
 
@@ -10,7 +14,7 @@ with open(os.path.join(os.getcwd(), "8.pdf"), "rb") as pdf_file:
     pdf_reader = PyPDF2.PdfReader(pdf_file)
 
     # Initialize empty list to store quotes
-    quotes = []
+
 
     # Get the total number of pages in the PDF file
     total_pages = len(pdf_reader.pages)
@@ -104,11 +108,27 @@ with open(os.path.join(os.getcwd(), "8.pdf"), "rb") as pdf_file:
 for quote in quotes:
     blankified = pattern.sub("_____", quote)
     answers = re.findall(pattern, quote)
+
     if len(answers)> 0:
         blanks_n_keys.append([blankified, answers])
-        print()
-        print(blankified)
-        print()
-        input("press enter to show answers")
-        print(answers)
-
+    #     print()
+    #     print(blankified)
+    #     print()
+    #     input("press enter to show answers")
+    #     print(answers)
+        
+x = len(blanks_n_keys)
+while x !=0:
+    
+    i = random.randint(0, x-1)
+    quoteNkey = blanks_n_keys[i]
+    quote = quoteNkey[0]
+    answer = quoteNkey[1]
+    blanks_n_keys.pop(i)
+    print(quote)
+    input("\n press enter to show answers\n")
+    print(answer)
+    print()
+    x = len(blanks_n_keys)
+    print(str(x) + " fill in the blanks left!\n")
+print("Congrats good luck on the test")
