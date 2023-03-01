@@ -131,4 +131,6 @@ while x !=0:
     print()
     x = len(blanks_n_keys)
     print(str(x) + " fill in the blanks left!\n")
+    input("Press Enter for the next question")
+    os.system('cls')
 print("Congrats good luck on the test")
