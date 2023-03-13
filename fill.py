@@ -2,10 +2,10 @@ import PyPDF2
 import re
 import os
 import random
-
+import csv
 quotes = []
 
-with open(os.path.join(os.getcwd(), "Midterm Things.pdf"), "rb") as pdf_file:
+with open(os.path.join(os.getcwd(), "1.pdf"), "rb") as pdf_file:
 
 # Open the PDF file in read-binary mode
 
@@ -68,8 +68,6 @@ with open(os.path.join(os.getcwd(), "Midterm Things.pdf"), "rb") as pdf_file:
         "Morpheus",
         "Circe",
         "Orpheus",
-        "Heracles",
-        "Perseus",
         "Bellerophon",
         "Atalanta",
         'Coeus', 
@@ -78,7 +76,22 @@ with open(os.path.join(os.getcwd(), "Midterm Things.pdf"), "rb") as pdf_file:
         'Themis',
         'Thanatos'
     ]
+    
+    heroes = ['Achilles', 'Hercules', 'Odysseus', 'Perseus', 'Theseus', 'Aeneas', 'Romulus', 'Remus', 'Julius Caesar', 'Augustus']
 
+    relatives = ['Cadmus', 'Leto', 'Semele']
+
+    f = open('names.csv', 'w')
+    for name in deities:
+        f.write(name+",")
+    f.write("\n")
+    for name in heroes:
+        f.write(name+",")
+    f.write("\n")
+    for name in relatives:
+        f.write(name+',')
+    f.close()
+        
 
     blanks_n_keys = []
 
